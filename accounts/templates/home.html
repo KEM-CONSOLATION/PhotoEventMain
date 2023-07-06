@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+<div class="banner-section">
+    <!-- <img src="assets/images/demo-images.png" alt="img" class="banner-img" />
+    <img src="assets/images/bg_blur.png" alt="img" class="blur-img" /> -->
+    <div class="container">
+      <div class="banner-content">
+        <div class="the-brand">
+          <span>The Brand new PhotoCard Generator for Event 🎉</span>
+        </div>
+        <h1 style="font-size: 24px; color: #f31a1a">
+          20th Mini Converge- Aso 2023 Accreditation Portal
+        </h1>
+        
+        <p class="roboto">Easy PhotoCard Generator for Events</p>
+        <div class="banner-btns">
+          <a href="{% url 'register' %}"
+            >Click here to register for Event !</a
+          >
+          <a href="">View Events</a>
+        </div>
+      </div>
+    </div>
+  </div>
+    
+{% endblock content %}
+    

@@ -1,0 +1,84 @@
+{% extends 'main.html' %}
+{% load static %}
+{% block content %}
+
+<div class="ugf-main-wrap ugf-bg">
+    <div class="ugf-header">
+      <div class="logo">
+        <a href="{% url 'home' %}"
+          ><img
+            src="https://res.cloudinary.com/dslqlq4po/image/upload/v1688548918/NorseLogo_u4f8mp.png"
+            width="70"
+            class="img-fluid"
+            alt=""
+        /></a>
+      </div>
+      <div class="alternet-access">
+        <p>
+          Don't have an account?
+          <a href="{% url 'register' %}" style="color: #f31a1a"
+            >&nbsp; Register now!</a
+          >
+        </p>
+      </div>
+    </div>
+    <div class="container">
+      <div class="row">
+        <div class="col">
+          <div class="ugf-container pt200">
+            <div class="content-wrap">
+              <div class="ugf-form-block-header">
+                <h1>Welcome Back!</h1>
+                <p>
+                  Enter your email address and password to <br />
+                  get access your account
+                  <br/>{% include 'alerts.html' %}
+
+                </p>
+              </div>
+              <div class="ugf-input-block">
+                <form action="{% url 'login' %}" method="post">
+                    {% csrf_token %}
+                  <div class="form-group">
+                    <input
+                      type="email"
+                      class="form-control"
+                      id="inputMail"
+                      name="username"
+                      placeholder="Email Address"
+                    />
+                  </div>
+                  <div class="form-group pass-block">
+                    <input
+                      type="password"
+                      class="form-control"
+                      id="inputPass"
+                      placeholder="Password"
+                      name="password"
+                    />
+                  </div>
+                  <button
+                    type="submit"
+                    class="btn"
+                    style="background-color: #f31a1a"
+                  >
+                    Login Account
+                  </button>
+                  <!-- <a
+                    href="forget.html"
+                    class="forget-pass"
+                    style="color: #f31a1a"
+                    >Forget Password?</a
+                  > -->
+                </form>
+              </div>
+    
+            </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endblock content %}
+    

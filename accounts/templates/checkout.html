@@ -1,0 +1,161 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <!-- Mirrored from uigaint.com/demo/html/anfra/login-register-2/register.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 05 Jul 2023 18:48:08 GMT -->
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+
+    <title>Payment</title>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="{% static 'login/assets/css/bootstrap.min.css' %}" />
+
+    <!-- External Css -->
+    <link rel="stylesheet" href="{% static 'login/assets/css/line-awesome.min.css' %}" />
+
+    <!-- Custom Css -->
+    <link rel="stylesheet" type="text/css" href="{% static 'login/assets/css/main.css' %}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'login/assets/css/theme-1.css' %}" />
+
+    <!-- Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&amp;display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Favicon -->
+    <link
+      rel="icon"
+      href="https://res.cloudinary.com/dslqlq4po/image/upload/v1688548918/NorseLogo_u4f8mp.png"
+    />
+
+    <link rel="apple-touch-icon" href="{% static 'login/assets/images/apple-touch-icon.png' %}" />
+    <link
+      rel="apple-touch-icon"
+      sizes="72x72"
+      href="{% static 'login/assets/images/icon-72x72.png' %}"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="114x114"
+      href="{% static 'login/assets/images/icon-114x114.png' %}"
+    />
+  </head>
+  <body>
+    <div class="ugf-main-wrap ugf-bg">
+        <div class="ugf-header">
+          <a href="{% url 'home' %}"
+            ><img
+              src="https://res.cloudinary.com/dslqlq4po/image/upload/v1688548918/NorseLogo_u4f8mp.png"
+              width="70"
+              class="img-fluid"
+              alt=""
+          /></a>
+  
+          <div class="alternet-access">
+            <p>
+              
+              <a href="{% url 'logout' %}" style="color: #f31a1a">&nbsp; Logout</a>
+            </p>
+          </div>
+        </div>
+        <div class="container">
+          <div class="row">
+            <div class="col">
+              <div class="ugf-container">
+                <div class="content-wrap">
+                  <div class="ugf-form-block-header">
+                    <h1>Check out form</h1>
+                    <p>{% include 'alerts.html' %}</p>
+                  </div>
+                  <div class="ugf-input-block">
+                    <form action="." method="post">
+                        {% csrf_token %}
+                      
+                      <div class="form-group">
+                       
+                        <input
+                          type="email"
+                          class="form-control"
+                          id="inputMail"
+                          value="{{user.username}}"
+                          name="email"
+                          placeholder="Email Address"
+                         readonly
+                        />
+                      </div>
+                      
+                      <div class="form-group pass-block">
+                        <select
+                          id="selectField"
+                          class="form-control"
+                          style="font-weight: bold"
+                          name="designation"
+                          
+                        >
+                          <option value="">Select Designation</option>
+                          <option value="100">Sailyn Council Members</option>
+                          <option value="150">Deckhands</option>
+                        </select>
+                      </div>
+                      <div class="form-group pass-block">
+                        <input
+                          type="amount"
+                          class="form-control"
+                          id="amount"
+                          name="amount"
+                          placeholder="Amount"
+                          readonly
+                        />
+                      </div>
+                      <button
+                        type="submit"
+                        class="btn"
+                        style="background-color: #f31a1a"
+                        
+                      >
+                      Continue
+                      </button>
+                        
+                    
+                    </form>
+                  </div>
+                  
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+  
+      <script>
+        const selectField = document.getElementById("selectField");
+        const amount = document.getElementById("amount");
+  
+        selectField.addEventListener("change", function () {
+          if (selectField.value === "100") {
+            amount.value = "100";
+          } else if (selectField.value === "150") {
+            amount.value = "150";
+          } else {
+            amount.value = "";
+          }
+        });
+      </script>
+
+      <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="{% static 'login/assets/js/jquery.min.js' %}"></script>
+    <script src="{% static 'login/assets/js/popper.min.js' %}"></script>
+    <script src="{% static 'login/assets/js/bootstrap.min.js' %}"></script>
+
+    <script src="{% static 'login/assets/js/custom.js' %}"></script>
+  </body>
+
+  <!-- Mirrored from uigaint.com/demo/html/anfra/login-register-2/register.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 05 Jul 2023 18:48:20 GMT -->
+</html>

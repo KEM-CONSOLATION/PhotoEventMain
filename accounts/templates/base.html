@@ -1,0 +1,78 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>PhotoCard</title>
+    <!-- Bootstrap -->
+    <link href="{% static 'assets/css/bootstrap.min.css' %}" rel="stylesheet" />
+    <link rel="stylesheet" href="{% static 'assets/css/line-awesome.min.css' %}" />
+
+
+    <!-- Custom Css -->
+    <link rel="stylesheet" type="text/css" href="{% static 'assets/css/main.css' %}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'assets/css/demo.css' %}" />
+
+    
+
+    <!-- Fonts -->
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&amp;display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Favicon -->
+    <link
+      rel="icon"
+      href="https://res.cloudinary.com/dslqlq4po/image/upload/v1688548918/NorseLogo_u4f8mp.png"
+    />
+    <link rel="apple-touch-icon" href="{% static 'assets/images/apple-touch-icon.png' %}" />
+    <link
+      rel="apple-touch-icon"
+      sizes="72x72"
+      href="{% static 'assets/images/icon-72x72.png' %}"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="114x114"
+      href="{% static 'assets/images/icon-114x114.png' %}"
+    />
+  </head>
+  <body>
+    
+    {% include 'navbar.html' %}
+    {% block content %}
+        
+    {% endblock content %}
+
+         
+    {% block scripts %}
+    {% endblock %}
+
+    <div class="back-to-top-wrap">
+        <a href="#" class="back-to-top"><i class="las la-angle-up"></i></a>
+    </div>
+    {% include 'footer.html' %}
+        
+
+
+        
+  
+      <!-- Optional JavaScript -->
+      <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+      <script src="{% static 'assets/js/jquery.min.js' %}"></script>
+      <!-- Include all compiled plugins (below), or include individual files as needed -->
+      <script src="{% static 'assets/js/bootstrap.min.js' %}"></script>
+      <script src="{% static 'assets/js/isotope.pkgd.min.js' %}"></script>
+      <script src="{% static 'assets/js/imagesloaded.pkgd.min.js' %}"></script>
+      <script src="{% static 'assets/js/sticky-sidebar.js' %}"></script>
+  
+      <script src="{% static 'assets/js/demo.js' %}"></script>
+    </body>
+  
+    <!-- Mirrored from uigaint.com/demo/html/anfra/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 05 Jul 2023 18:47:01 GMT -->
+  </html>

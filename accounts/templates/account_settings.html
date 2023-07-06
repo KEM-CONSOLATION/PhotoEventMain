@@ -1,0 +1,81 @@
+{% extends 'main.html' %}
+{% load static %}
+{% block content %}
+{% load crispy_forms_tags %}
+<div class="container">
+    <div class="row">
+      <div class="col">
+        <div class="ugf-container">
+          <div class="content-wrap">
+            <div class="ugf-form-block-header">
+              <h1 class="text-danger">Complete Your Register</h1>
+              <p class="text-danger">
+                Enter your valid Details Below to Complete Registration<br>{% include 'alerts.html' %}
+              </p>
+            </div>
+            <div class="ugf-input-block">
+                <form method='POST' enctype="multipart/form-data">
+                    {%csrf_token%}
+                    {{user_form|crispy}}
+                    {{profile_form|crispy}}
+                <div class="form-check">
+                  <label for="" class="text-danger"
+                    >I Agree To Be Instantly Roba Drilled N200,000 As
+                    Consequence of Violation of the Rule Against The Use of
+                    Hard Drugs and Obnoxious Substances:</label
+                  >
+                  <input
+                    class="form-check-input"
+                    type="checkbox"
+                    id="check"
+                  />
+                  required
+                </div>
+
+                <div class="form-check" style="margin: 20px 0">
+                  <label for="" class="text-danger"
+                    >I Am Aware of a 25 Maja Drill As Additional Consequence
+                    of Violation of the Rule Against The Use of Hard Drugs
+                    and Obnoxious Substances:</label
+                  >
+                  <input
+                    class="form-check-input"
+                    type="checkbox"
+                    id="check"
+                    required
+                  />
+                </div>
+
+                <div class="form-check">
+                  <label for="" class="text-danger"
+                    >I Am Also Aware of a Sanction of Six (6) Month's
+                    Suspension From DNKI, Being Additional Consequence of
+                    Violation of the Rule Against The Use of Hard Drugs and
+                    Obnoxious Substances:</label
+                  >
+                  <input
+                    class="form-check-input"
+                    type="checkbox"
+                    required
+                    id="check"
+                  />
+                </div>
+               
+
+                
+                <button
+                  type="submit"
+                  class="btn"
+                  style="background-color: #f31a1a"
+                >
+                  Proceed
+                </button>
+                <p class="terms">
+                  By clicking here and continuing, <br />
+                  I agree to the <a href="{% url 'account_settings' %}">Terms of Service</a> and
+                  <a href="{% url 'account_settings' %}">Privacy Policy</a>.
+                </p>
+              </form>
+            </div>
+{% endblock content %}
+    

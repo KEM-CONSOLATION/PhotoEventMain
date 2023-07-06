@@ -1,0 +1,83 @@
+{% extends 'main.html' %}
+{% block content %}
+{% load static %}
+    <div class="ugf-main-wrap ugf-bg">
+      <div class="ugf-header">
+        <a href="{% url 'home' %}"
+          ><img
+            src="https://res.cloudinary.com/dslqlq4po/image/upload/v1688548918/NorseLogo_u4f8mp.png"
+            width="70"
+            class="img-fluid"
+            alt=""
+        /></a>
+        
+        
+
+<div class="alternet-access">
+    <p>
+      Already have an account?
+      <a href="{% url 'login' %}" style="color: #f31a1a">&nbsp; Log in now!</a>
+    </p>
+  </div>
+</div>
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <div class="ugf-container">
+        <div class="content-wrap">
+          <div class="ugf-form-block-header">
+            <h1>Register Your Account</h1>
+            <p>Enter your valid Details Below to Register<br>{% include 'alerts.html' %}</p>
+           
+          </div>
+          <div class="ugf-input-block">
+            <form action="{% url 'register' %}" method="post">
+              {% csrf_token %}
+              <div class="form-group">
+                <input
+                  type="email"
+                  class="form-control"
+                  id="inputMail" name="username"
+                  placeholder="Email Address"
+                />
+              </div>
+             
+              <div class="form-group pass-block">
+                <input
+                  type="password"
+                  class="form-control"
+                  id="inputPass" name="password1"
+                  placeholder="Password"
+                />
+              </div>
+              <div class="form-group pass-block">
+                <input
+                  type="password"
+                  class="form-control"
+                  id="inputPass" name="password2"
+                  placeholder="Confirm Password"
+                />
+              </div>
+              <button
+                type="submit"
+                class="btn"
+                style="background-color: #f31a1a"
+              >
+                Register Account
+              </button>
+            </form>
+          </div>
+          <div class="alternet-access">
+            <p>
+              Already have an account?
+              <a href="{% url 'login' %}">&nbsp; Log in now!</a>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+
+{% endblock content %}

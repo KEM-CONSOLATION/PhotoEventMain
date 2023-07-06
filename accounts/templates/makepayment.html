@@ -1,0 +1,46 @@
+{% extends 'main.html' %}
+{% block content %}
+
+<div class="container mt-5 mb-5 text-center">
+    <h1>making Payment: NGN {{payment.amount}}</h1>
+    
+    <script src="https://js.paystack.co/v1/inline.js"></script>
+    <button class="btn "
+    style="background-color: #f31a1a" id="django-paystack-button" onclick="payWithPaystack()">Making Payment</button>
+
+</div>
+    
+{% endblock  %}
+
+{% block scripts %}
+
+<script>
+function payWithPaystack() {
+    let currency= "NGN";
+    let plan = "";
+    let ref = "{{payment.ref}}";
+    let obj = {
+        key: "{{paystack_public_key}}",
+        email:"{{payment.email}}",
+        amount:"{{payment.amount_value}}",
+        ref:ref,
+        callback: function(response){
+            window.location.href = "{% url 'verify-payment' payment.ref %}";
+            
+        }
+    }
+    if (Boolean(currency)){
+        obj.currency = currency.toUpperCase()
+    }
+    if (Boolean(plan)){
+        obj.plan = plan
+    }
+    var handler = PaystackPop.setup(obj);
+    handler.openIframe();
+    
+}
+</script>
+
+
+{% endblock %}
+    
